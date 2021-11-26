@@ -81,7 +81,7 @@ class Dataset(object):
             for file in train_file_name:
                 train_image.append(np.array(Image.open("/content/data/dataset/train/"+file),dtype='uint8'))
             train_image=np.array(train_image)
-            (custom_train,custom_label)=(train_image,train_label)
+            (self.X_train, self.y_train), (self.X_test, self.y_test) = (train_image,train_label),(train_image,train_label)
             ###여기까지, 아래는 원본 데이터 불러오기 주석처리
             #(self.X_train, self.y_train), (self.X_test, self.y_test) = tf.keras.datasets.mnist.load_data(path=self.config['mnist_path'])
             # prepare the data
