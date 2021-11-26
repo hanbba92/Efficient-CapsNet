@@ -21,6 +21,7 @@ import os
 from utils import pre_process_mnist, pre_process_multimnist, pre_process_smallnorb
 import json
 import pandas as pd
+from PIL import Image
 
 
 class Dataset(object):
