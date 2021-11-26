@@ -79,7 +79,7 @@ class Dataset(object):
             # image 파일을 불러와서 list에 담아줍니다.
             train_image = []
             for file in train_file_name:
-                train_image.append(np.array((Image.open("/content/data/dataset/train/"+file)),dtype='float32'))
+                train_image.append(np.array((Image.open("/content/data/dataset/train/"+file),dtype='float32')))
             train_image=np.array(train_image)
             (custom_train,custom_label)=(train_image,train_label)
             ###여기까지, 아래는 원본 데이터 불러오기 주석처리
