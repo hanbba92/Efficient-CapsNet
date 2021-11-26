@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 import os
 from utils import pre_process_mnist, pre_process_multimnist, pre_process_smallnorb
 import json
+import pandas as pd
 
 
 class Dataset(object):
@@ -69,7 +70,7 @@ class Dataset(object):
     def get_dataset(self):
         if self.model_name == 'MNIST':
             ###이 부분부터 데이콘 데이터로 바꿔치기
-            train_data = pd.read_csv('data/dataset/train/train_data.csv')
+            train_data = pd.read_csv('/content/data/dataset/train/train_data.csv')
             train_data
             train_file_name = train_data['file_name']
             train_label = train_data['label']
@@ -77,7 +78,7 @@ class Dataset(object):
             # image 파일을 불러와서 list에 담아줍니다.
             train_image = []
             for file in train_file_name:
-                train_image.append(np.array((Image.open("data/dataset/train/"+file))))
+                train_image.append(np.array((Image.open("/content/data/dataset/train/"+file))))
             train_image=np.array(train_image)
             (custom_train,custom_label)=(train_image,train_label)
             ###여기까지, 아래는 원본 데이터 불러오기 주석처리
